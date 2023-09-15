@@ -44,6 +44,7 @@ nav .nav-link {
   flex-direction: column;
   width: 80%;
   justify-content: center;
+  box-sizing: content-box;
 }
 .home h2 {
   font-weight: bold;
@@ -64,7 +65,7 @@ nav .nav-link {
 }
 
 .height-author {
-  height: 590px;
+  height: 90vh !important;
 }
 .height-author .allAuthors {
   height: 100%;

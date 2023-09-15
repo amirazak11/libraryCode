@@ -8,10 +8,6 @@ $height: 100%;
     margin: 0;
 }
 
-//   body{
-//     min-height: 100%;
-
-//   }
 
 @mixin transition($sec){
     transition: all $sec;
@@ -94,7 +90,7 @@ nav {
 }
 
 .height-author {
-    height: 590px;
+   height: 90vh !important;
 
     .allAuthors {
         height: 100%;
@@ -123,7 +119,6 @@ nav {
     .liked {
         z-index: 1;
         top: -20px;
-
         font-size: 40px;
         right: 5px;
        color: rgb(165, 5, 5) ;

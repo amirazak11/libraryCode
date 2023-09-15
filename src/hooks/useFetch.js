@@ -15,6 +15,7 @@ const useFetch = (url, keyData) => {
       setError(err);
     } 
   };
+  console.log(data)
 
   useEffect(() => {
     getData();

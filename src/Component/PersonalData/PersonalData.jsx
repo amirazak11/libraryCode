@@ -46,6 +46,9 @@ export default function PersonalData() {
   console.log(selectedFile);
 
   return (
+
+    <div className=" bg-gradient-to-r from-gray-300 to-blue-200">
+
     <section className="pt-16 bg-blueGray-50 sm:overflow-y-scroll lg:overflow-hidden">
       <div className="w-full lg:w-4/8 px-4 mx-auto">
 
@@ -141,5 +144,6 @@ export default function PersonalData() {
         </div>
       </footer>
     </section>
+    </div>
   );
 }

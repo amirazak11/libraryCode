@@ -13,13 +13,11 @@ console.log(dataUserfav);
     dispatch(getFav());
   }, []);
   return (
-
-    
 <>
-<div className="container py-3 bg-slate-500">
-<div className="row ">
-{dataUserfav.map((book) => (
-<div className="col-5 m-auto card ">
+<div className="container py-3 bg-slate-500 flex ">
+<div className="row gap-4 justify-center">
+{dataUserfav?.map((book) => (
+<div className="col-5  card " key={book.bookName}>
   <div className="row  py-3">
   
     <div className="col-md-4 ">

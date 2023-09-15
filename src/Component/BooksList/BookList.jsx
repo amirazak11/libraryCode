@@ -15,21 +15,28 @@ export default function BookList({ books }) {
   let { dataUserfav } = useSelector((state) => state.dataUserfav);
   function handleSearchInputChange(e) {
     setSearchTerm(e.target.value); }
-useEffect(() => {
-  dispatch(getFav());
-}, [dispatch]); 
+    useEffect(() => {
+      dispatch(getFav());
+    }, [ dispatch]);
+
 useEffect(() => {
   if(dataUserfav){
   const newArray = dataUserfav.map((item) => item.bookName);
   setLiked(newArray);
 }
 }, [dataUserfav]);
-let handleLike = (bookName) => {
-  if(dataUser){
-  dispatch(isLike({ bookName }));
-  setLiked(newArray);
-}
-  else{
+useEffect(() => {
+  if (Liked.length > 0) {
+  }
+}, [Liked]);
+const handleLike = (bookName) => {
+  if (dataUser) {
+    dispatch(isLike({ bookName }));
+    const newArray = Liked.includes(bookName)
+      ? Liked.filter((name) => name !== bookName)
+      : [...Liked, bookName];
+    setLiked(newArray);
+  } else {
     navigate('/login');
   }
 };

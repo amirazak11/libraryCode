@@ -13,7 +13,6 @@ import AuthorsBooks from './Component/AuthorBooks/AuthorBooks';
 import FavouriteBooks from './Component/FavouriteBooks/FavouriteBooks';
 import store from './Redux/Store';
 import { Provider } from 'react-redux';
-import { HelmetProvider } from 'react-helmet-async';
 import PersonalData from './Component/PersonalData/PersonalData';
 function App() {
     let routes = createBrowserRouter([
@@ -37,14 +36,12 @@ function App() {
     ])
     return (
       <div>
-        <HelmetProvider>
 
 <Provider store={store}>
 
 <RouterProvider router={routes} />
 
 </Provider>
-</HelmetProvider>
       </div>
     );
   }

@@ -12,10 +12,8 @@ export default function Profile() {
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <>
-   
         <div className="px-3  lg:px-3 lg:pl-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-start">
@@ -39,14 +37,8 @@ export default function Profile() {
                   ></path>
                 </svg>
               </button>
-
-            </div>
-
-    </div>
+            </div>  </div>
   </div>
-
-
-
 <aside
         id="logo-sidebar"
         className={`fixed  left-0 z-40 w-64 h-screen  transition-transform ${

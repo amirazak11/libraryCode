@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import Joi from 'joi';
 import { useNavigate } from 'react-router-dom';
-import libraryImg from '../../imgs/ranurte-a-CnhYgTenY-unsplash.jpg'
 import {  Link } from 'react-router-dom'
 export default function Resigister() {
   let [validationError, setvalidationError] = useState([]);
@@ -35,6 +34,7 @@ export default function Resigister() {
     currentUser[e.target.name] = e.target.value;
     setUser(currentUser)
   }
+  console.log(user)
   async function register(e) {
     e.preventDefault();
     if (vaildation()) {
@@ -123,9 +123,22 @@ Navigate("/login");
   </div>
   <div className="form-group mb-1">
     <label htmlFor="exampleInputEmail1">Gender</label>
-    <input type="text" className="form-control"
+    
+<div className="flex items-center ">
+    <input id="default-radio-1" type="radio" name="gender" value="male" onChange={(e) => getDataUser(e)}  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+    <label htmlFor="default-radio-1" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Male</label>
+</div>
+<div className="flex items-center">
+    <input  id="default-radio-2" type="radio" name="gender" value="female" onChange={(e) => getDataUser(e)}  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+    <label htmlFor="default-radio-2" className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Female</label>
+</div>
+{/* 
+    <input type="radio" className="form-control"
     onChange={(e) => getDataUser(e)}
     name='gender' />
+        <input type="radio" className="form-control"
+    onChange={(e) => getDataUser(e)}
+    name='gender' /> */}
   </div>
   <div className={validationError.filter(ele =>ele.context.label=="gender")[0]?"alert alert-danger" :""}>
    {validationError.filter(ele =>ele.context.label=="gender")[0]?.message}
